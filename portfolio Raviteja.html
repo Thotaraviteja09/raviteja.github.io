@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sandeep Nalla's portfolio showcasing expertise in Azure, tech enthusiasm, and wellness advocacy." />
+  <meta name="keywords" content="Sandeep Nalla, Azure, Tech, Wellness, Yoga, Organic Living" />
+  <meta name="author" content="Sandeep Nalla" />
+  <title>Raviteja Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #1a1a2e !important;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-brand {
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ffffff !important;
+    }
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #b3def5 !important;
+    }
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      font-weight: 600;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    /* Hero Section (Graphical Banner) */
+    .hero {
+      background: linear-gradient(135deg, #171b1f 0%, #00BCF2 100%);
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    .hero-content {
+      z-index: 2;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Sections */
+    .section-title {
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: #00d4ff;
+    }
+
+    /* Section Visibility */
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1a2e;
+      color: #ddd;
+      padding: 40px 0;
+    }
+    .footer a {
+      color: #00d4ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #181f20;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+    }
+    .back-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        height: 400px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#" aria-label="Sandeep's Homepage">
+        <img src="./Ravi.jpg" style="object-fit: cover;" alt="Sandeep's Photo" class="rounded-circle me-2" width="100" height="100"  />
+        <span style="font-size: 1.8rem;">Ravi Teja Thota</span>
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home" data-section="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-section="skills">Skills & Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education" data-section="education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-section="about">About</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Home) -->
+  <section class="hero text-center active" id="home">
+    <div class="hero-content">
+      <h1>Welcome to My Portfolio<h1>
+      </h2>Ravi Teja Thota </h2>
+    </div>
+    
+  </section>
+
+  <!-- Skills and Certifications -->
+  <section class="container my-5" id="skills">
+    <h3 class="section-title text-center">Skills & Projects</h3>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h4>Technical Skills</h4>
+        <ul>
+          <li><strong>Languages:</strong> Python, Java, C/C++, HTML5, CSS3, Bootstrap 5, SAP-MM</li>
+          <li><strong>Tools & Cloud:</strong> Azure, AWS, DevOps, MySQL</li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h4>Projects</h4>
+        <ul>
+          <li>Virtual mouse using hand gesture recognition Python. OpenCV, Tensorflow
+            • DDeveloped a Virtual mouse using hand gesture recognition using python and machine learning algorithms.
+            • Utilized libraries such as TensorFlow and OpenCV to train and test the model.
+            • Awarded the bets project in the university.</li>
+           <li>Distributed Task Scheduling System with Load Balancing using gRPC | Python, gRPC, Docker
+            • Developed a robust architecture that separates the responsibilities of task submission, scheduling, and execution
+            • Created a functional prototype utilizing gRPC for inter-service communication and implement multiple load
+            balancing strategies, such as round-robin and least connections.
+            • Assessed the system’s performance regarding scalability, efficiency, and fault tolerance under varying workloads</li>
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="container my-5" id="education">
+    <h2 class="section-title text-center">Education</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h5>Master of Science in Computer Science</h5>
+        <p>University of South Dakota, USA<br><em>Aug 2024 – Present</em><br>Relevant Coursework: Data Mining, Computer Vision, Distributed Systems</p>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h5>Bachelor of Technology in Computer Sciences</h5>
+        <p>Kakinada Institute of Technology and Sciences Kakinada, INDIA 2018 – 2022, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="container my-5" id="about">
+    <h2 class="section-title text-center">About Me</h2>
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <p class="text-center">
+          I'm Raviteja Thota, a passionate computer science graduate currently pursuing my Master's at the University of South Dakota. I specialize in machine learning, computer vision, and AI-driven solutions. My goal is to use technology to make a meaningful impact, whether it's developing intuitive applications like a virtual mouse using hand gestures or building scalable systems with gRPC and Docker. With a solid foundation in Python, Java, and C++, and hands-on experience in both academic and real-world projects, I bring a balance of technical depth and practical problem-solving. Beyond code, I enjoy reading about innovation, playing chess, and contributing to social causes.
+        </p>
+        
+      </div>
+    </div>
+  </section>
+ 
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0 text-right text-md-start">
+        <p class="mb-1">Email: <a href="mailto:sandeepnalla2@gmail.com">Thotaraviteja2001@gmail.com</a></p>
+        <p>© 2025 Ravi Teja Thota</p>
+        <div class="hero-content">
+          <h1>Ravi Teja Thota</h1>
+          <p class="tagline">CS Master's Student </p>
+          <div class="hero-buttons">
+            <h1>For personal ping</h1>
+            <p>Ravi Teja Thota</p>
+            <p>Thotaraviteja2001@gmail.com</p>
+            <p>Contact: +1 6055213259</p>
+            <p>
+            <a href="Raviteja_resume.pdf" class="resume-button" download>Download Resume</a></p>
+    </div>
+      </div>
+      <div>
+        <div class="social-icons">
+            <a href="" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/home" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/Thotaraviteja09" target="_blank" aria-label="githubpicture"><i class="fab fa-github"></i></a>
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 5l-7 7h5v7h4v-7h5l-7-7z" />
+    </svg>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Section Navigation
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link[data-section]');
+
+    function showSection(sectionId) {
+      sections.forEach(section => {
+        section.classList.remove('active');
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === sectionId) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sectionId = link.getAttribute('data-section');
+        showSection(sectionId);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Show home section by default
+    showSection('home');
+
+    // Back to Top Button Functionality
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
